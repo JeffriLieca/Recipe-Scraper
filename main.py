@@ -1,10 +1,10 @@
+
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from urllib.request import urlopen
 from recipe_scrapers import scrape_html
 import uuid
-# import re
-from recipe_scrapers import SCRAPERS
 from urllib.parse import urlparse
 
 
@@ -15,14 +15,7 @@ def is_supported_url(url: str) -> bool:
     domain = hostname.replace("www.", "")
     return domain in SCRAPERS.keys()
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from urllib.request import urlopen
-from recipe_scrapers import scrape_html
-import uuid
-from urllib.parse import urlparse
 
-app = FastAPI()
 
 def determine_difficulty(steps: list[str]) -> str:
     count = len(steps)
