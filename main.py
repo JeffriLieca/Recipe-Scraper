@@ -65,6 +65,11 @@ class RecipeResponse(BaseModel):
     difficulty: str
 
 
+@app.get("/")
+def root():
+    return {"message": "API is running. Use /scrape-recipe?url=... to fetch recipe data."}
+
+
 @app.get("/scrape-recipe", response_model=RecipeResponse)
 def scrape_recipe(url: str):
     if not is_supported_url(url):
