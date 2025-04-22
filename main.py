@@ -6,7 +6,7 @@ from urllib.request import urlopen
 from recipe_scrapers import scrape_html
 import uuid
 from urllib.parse import urlparse
-
+from recipe_scrapers import SCRAPERS
 
 app = FastAPI()
 
